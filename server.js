@@ -46,7 +46,7 @@ app.post('/ask', async (req, res) => {
       return res.status(400).json({ error: 'Please provide a question in the request body.' });
     }
 
-    const result = await promptFunc(text);
+    const result = await promptFunc(userQuestion);
     res.json({ result });
   } catch (error) {
     console.error('Error:', error.message);
